@@ -50,7 +50,30 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
             
-                    <button type="submit">Send Message</button>
+                    <button onclick="saveToLocalStorage()" type="submit">Send Message</button>
+              <script>
+  
+
+
+                function messageAlert() {
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+
+                    if (!name){
+                      alert("Please enter a name.");
+                    } else if (!email) {
+                      alert ("Please enter an email.");
+                    } else if (!name && !email) {
+                      alert ("You are missing a name and an email.");
+                    } else if (!message) {
+                      alert ("Message box is empty.");
+                    } else {
+
+                      alert("Thank you for your message.");
+                    } 
+                }
+            </script>
                 </form>
             </div>
 
@@ -68,9 +91,20 @@
           <section id="sub-form">
             <p>Want to receive weekly updates to stay involved? Enter your email to sign up!</p>
             <form action="#">
-              <input type="email" name="email" id="email" placeholder>
-              <button type="submit">Subscribe now!</button>
-            </form>
+              <input type="email" name="sub-email" id="sub-email" placeholder="Enter an email address" required>
+              <button onclick="enableAlert()" type="submit">Subscribe now!</button>
+              <script>
+                function enableAlert() {
+                    const email = document.getElementById('sub-email').value;
+                    
+                    if (!email){
+                      alert ("Email must be filled in.")
+                    } else {
+                      alert("Thank you for subscribing.");
+                    }
+                    
+                }
+            </script>
           </section>
           
           <nav>
@@ -86,5 +120,6 @@
           </nav>
         </section>
       </footer>
+      <script src="cart.js"></script>
   </body>
 </html>

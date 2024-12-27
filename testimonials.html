@@ -66,9 +66,20 @@
           <section id="sub-form">
             <p>Want to receive weekly updates to stay involved? Enter your email to sign up!</p>
             <form action="#">
-              <input type="email" name="email" id="email" placeholder>
-              <button type="submit">Subscribe now!</button>
-            </form>
+              <input type="email" name="email" id="email" placeholder="Enter an email address" required>
+              <button onclick="enableAlert()" type="submit">Subscribe now!</button>
+              <script>
+                function enableAlert() {
+                    const email = document.getElementById('email').value;
+                    
+                    if (!email){
+                      alert ("Email must be filled in.")
+                    } else {
+                      alert("Thank you for subscribing.");
+                    }
+                    
+                }
+            </script>
           </section>
           
           <nav>

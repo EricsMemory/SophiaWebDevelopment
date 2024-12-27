@@ -5,9 +5,22 @@
     <meta charset="utf-8">
     <title>Bloom Valley Nursing - Home</title>
     <link rel="stylesheet" href="gallery.css">
-  </head>
+    
 
   <body>
+    <div id="cart-modal" class="modal">
+      
+        <div class="modal-content">
+          <button onclick="closeCartModal()" id="close-cart-modal">× Close Cart</button>
+          <h3>Your Cart</h3>
+          <br>
+          <ul id="cart-items"></ul>
+          <br>
+          <br>
+          <button id="clear-cart-button" class="cart-button">Clear Cart</button>
+          <button id="process-order-button" class="cart-button">Process Order</button>
+        </div>
+  </div>
 
     <!-- Header to include logo and navbar -->
     <header>
@@ -28,8 +41,8 @@
     <!-- Div for main content -->
     <main>
         <div id="content">
-            <div id="view-cart">
-                <button id="add">View Cart</button>
+            <div id="cart-buttons">
+                <button id="view-cart-button">View Cart</button>
             </div>
             <table>
                 <tr>
@@ -40,103 +53,103 @@
                 <tr>
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_AloePlant.png" alt="Picture of an aloe plant.">
-                        <h4>Aloe Plant</h1>
+                        <h4>Aloe Plant</h4>
                     </td>
                     <td class="desc-cell">A small, low-maintenance succulent with thick, green leaves. <br>
                         It’s great for adding a bit of greenery to your space and is easy to care for, 
                         making it a nice choice for beginners.</td>
                     <td class="price-cell">
                         $6.99
-                        <button id="add" class="">Add to Cart</button>
+                        <button class="add-to-cart-button" id="add" data-item="Aloe Plant">Add to Cart</button>
                     </td>
                 </tr>
                 <tr>
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_AppleTree.png" alt="A picture of an apple tree.">
-                        Apple Tree Seeds
+                        <h4 id="apple-seeds">Apple Tree Seeds</h4>
                     </td>
                     <td class="desc-cell">Grow your own apple tree! These seeds are easy to plant and just need a bit of time and care. <br>
                         Perfect for anyone wanting to try gardening or start a small tree in their yard.</td>
                         <td class="price-cell">
                             $6.99 <br>per 50 seeds
-                            <button id="add" class="">Add to Cart</button>
+                            <button class="add-to-cart-button" id="add" data-item="Apple Seeds">Add to Cart</button>
                         </td>
                 <tr>
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_BirchTree.png" alt="A picture of a birch tree.">
-                        Birch Tree Seeds
+                        <h4 id="birch-seeds">Birch Tree Seeds</h4>
                     </td>
                     <td class="desc-cell">Grow your own birch tree! These seeds are easy to plant and just need a bit of time and care. <br>
                         Just plant them and watch them grow over time.</td>
                         <td class="price-cell">
-                            $7.99 <br>per 50 seeds
-                            <button id="add" class="">Add to Cart</button>
+                            <data value="7.99" id="birch-price"></data>$7.99<br>per 50 seeds
+                            <button class="add-to-cart-button" id="add" data-item="Birch Seeds">Add to Cart</button>
                         </td>
                 <tr>
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_BirdHouse.png" alt="A picture of a bird house.">
-                        Wooden Birdhouse Kit
+                        <h4 id="birdhouse">Wooden Birdhouse Kit</h4>
                     </td>
                     <td class="desc-cell">Build a cozy spot for birds to hang out! This simple birdhouse kit is easy to put together and perfect for adding some charm to your yard. <br>
                         Great for nature lovers or a fun project.</td>
                         <td class="price-cell">
                             $29.99
-                            <button id="add" class="">Add to Cart</button>
+                            <button class="add-to-cart-button" id="add" data-item="Birdhouse">Add to Cart</button>
                         </td>
                 <tr>
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_MapleTree.png" alt="A picture of a maple tree.">
-                        Maple Tree Seeds
+                        <h4 id="maple-seeds">Maple Tree Seeds</h4>
                     </td>
                     <td class="desc-cell">Grow your own maple tree! These seeds are super easy to plant and great for adding some shade and fall colors to your yard. <br>
                         A fun project for anyone who loves trees.</td>
                         <td class="price-cell">
-                            $9.99 <br>per 50 seeds
-                            <button id="add" class="">Add to Cart</button>
+                            $9.99<br>per 50 seeds
+                            <button class="add-to-cart-button" id="add" data-item="Maple Seeds">Add to Cart</button>
                         </td>
                 <tr>
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_PottingSoil.png" alt="A picture of potting soil.">
-                        All-Purpose Potting Soil
+                        <h4 id="soil"></h4>All-Purpose Potting Soil
                     </td>
                     <td class="desc-cell">Perfect for your plants! This potting soil is great for pots, planters, or garden beds. <br>
                         It's easy to use and helps your plants grow happy and healthy.</td>
                         <td class="price-cell">
                             $11.99
-                            <button id="add" class="">Add to Cart</button>
+                            <button class="add-to-cart-button" id="add" data-item="All-Purpose Soil">Add to Cart</button>
                         </td>
                 <tr> 
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_SpiderPlant.png" alt="A picture of a spider plant.">
-                        Spider Plant
+                        <h4 id="spider-plant">Spider Plant</h4>
                     </td>
                     <td class="desc-cell">The spider plant looks cool with its long, striped leaves and keeps your area looking fresh! <br>
                     Perfect for beginners or any plant lover.</td>
                     <td class="price-cell">
                         $18.99
-                        <button id="add" class="">Add to Cart</button>
+                        <button class="add-to-cart-button" id="add" data-item="Spider Plant">Add to Cart</button>
                     </td>
                 <tr> 
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_StringofPearls.png" alt="A picture of a string of pearls plant.">
-                        String of Pearls
+                        <h4 id="pearls"></h4>String of Pearls
                     </td>
                     <td class="desc-cell">The spider plant looks cool with its long, striped leaves and keeps your area looking fresh! <br>
                     Perfect for beginners or any plant lover.</td>
                     <td class="price-cell">
                         $14.99
-                        <button id="add" class="">Add to Cart</button>
+                        <button class="add-to-cart-button" id="add" data-item="String of Pearls">Add to Cart</button>
                     </td>
                 <tr> 
                     <td class="product-cell">
                         <img id="table-img" src="Images/Client1_WateringCan.png" alt="A picture of a watering can.">
-                        Classic Watering Can
+                        <h4 id="water-can">Classic Watering Can</h4>
                     </td>
                     <td class="desc-cell">Keep your plants hydrated with this easy-to-use, lightweight watering can. <br>
                     A must-have for any plant parent!</td>
                     <td class="price-cell">
                         $14.99
-                        <button id="add" class="">Add to Cart</button>
+                        <button class="add-to-cart-button" id="add" data-item="Watering Can">Add to Cart</button>
                     </td>
             </table>
 
@@ -152,8 +165,20 @@
           <section id="sub-form">
             <p>Want to receive weekly updates to stay involved? Enter your email to sign up!</p>
             <form action="#">
-              <input type="email" name="email" id="email" placeholder>
-              <button type="submit">Subscribe now!</button>
+              <input type="email" name="email" id="email" placeholder="Enter an email address" required>
+              <button onclick="enableAlert()" type="submit">Subscribe now!</button>
+              <script>
+                function enableAlert() {
+                    const email = document.getElementById('email').value;
+                    
+                    if (!email){
+                      alert ("Email must be filled in.")
+                    } else {
+                        alert("Thank you for subscribing.");
+                    }
+                    
+                }
+            </script>
             </form>
           </section>
           
@@ -170,5 +195,7 @@
           </nav>
         </section>
       </footer>
+
+      <script src="cart.js"></script>
   </body>
 </html>
