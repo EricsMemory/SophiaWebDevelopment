@@ -97,6 +97,28 @@ main {
     padding: 20px;
 }
 
+#hours table {
+    width: 50%;
+    color: #f4f4f4;
+    background-color: #4B4A1E;
+    border-collapse: collapse;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+}
+
+#hours th {
+    color: #4B4A1E;
+}
+#hours th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+#hours th {
+    background-color: #f4f4f4;
+}
+
 #description {
     font-size: 20px;
     margin-bottom: 20px;
